@@ -1,12 +1,13 @@
 import Nav from "../components/Nav";
-import Header from "../components/Header";
 
 export default function Statistic(){
         return(
         <>
-            <Header/>
+            <header>
+                <h1>Statistik</h1>
+            </header>
             <main></main>
-            <Nav/>
+            <Nav statistic/>
         </>
     )
 }

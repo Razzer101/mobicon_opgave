@@ -1,12 +1,12 @@
 import Nav from "../components/Nav";
-import Header from "../components/Header";
 
 export default function Temp(){
     return(
         <>
-            <Header/>
+            <header>
+                <h1>Varme</h1>
+            </header>
             <main></main>
-            <Nav/>
         </>
     )
 }

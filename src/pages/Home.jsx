@@ -1,12 +1,13 @@
 import Nav from "../components/Nav";
-import Header from "../components/Header";
 
 export default function Home(){
     return(
         <>
-            <Header/>
+            <header>
+                <h1>Smart Home</h1>
+            </header>
             <main></main>
-            <Nav/>
+            <Nav home/>
         </>
     )
 }
