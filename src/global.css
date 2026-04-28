@@ -5,5 +5,22 @@
 }
 
 body{
-    background-color: #0000001A;
+    background-color: #0000000d;
+}
+
+@theme{
+  --color-main: #0F407B;
+  --color-font: #1E1F25;
+  --color-info: #878A96;
+  --color-highlight: #35CF94;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
