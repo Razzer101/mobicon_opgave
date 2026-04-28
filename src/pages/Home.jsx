@@ -1,5 +1,6 @@
 import { FiChevronDown, FiMenu } from "react-icons/fi";
 import Nav from "../components/Nav";
+import { Link } from "react-router";
 
 export default function Home(){
     return(
@@ -32,7 +33,7 @@ export default function Home(){
                             <FiChevronDown className="text-info"/>
                         </button>
                     </div>
-                    <ul className="flex overflow-auto snap-mandatory snap-x scroll no-scrollbar pt-1 pb-2 px-3">
+                    <ul className="flex overflow-auto snap-mandatory snap-x no-scrollbar pt-1 pb-2 px-3">
                         <li className="snap-center snap-always mr-4 bg-white py-2 px-3 rounded-lg shadow-md flex items-center shrink-0">
                             <img className="mr-3" src="/icon_bedroom.png" alt="bedroom icon" />
                             <p className="text-xs text-info">Soveværelse</p>
@@ -69,23 +70,23 @@ export default function Home(){
                     </ul>
                 </section>
                 <section className="flex flex-col mb-8">
-                    <h2 className="pl-5 mb-1 text-font">Smart indstillinger</h2>
-                    <ul className="grid grid-cols-2 gap-3 overflow-auto h-[40vh] no-scrollbar px-3 pt-1 pb-2">
-                        <li className="bg-white rounded-xl p-3 shadow-md">
+                    <h2 className="pl-5 mb-3 text-font">Smart indstillinger</h2>
+                    <ul className="grid grid-cols-2 gap-3 overflow-auto snap-mandatory snap-y h-[40vh] no-scrollbar px-3 pt-1 pb-2">
+                        <li className="bg-white rounded-xl p-3 shadow-md snap-center snap-always flex flex-col">
                             <h3 className="text-sm text-font mb-3">Lys i Stuen</h3>
-                            <div className="flex justify-between mb-3 items-center">
+                            <div className="flex justify-between mb-auto items-center">
                                 <p className="text-xs text-info">Alt lys</p>
                                 <button className="w-10.5 h-6 rounded-xl bg-main flex p-0.75 justify-end">
                                     <span className="bg-white w-4.5 rounded-2xl"></span>
                                 </button>
                             </div>
-                            <div className="flex justify-between mb-3 items-center">
+                            <div className="flex justify-between mb-auto items-center">
                                 <p className="text-xs text-info">Loftlampe</p>
                                 <button className="w-10.5 h-6 rounded-xl bg-main flex p-0.75 justify-end">
                                     <span className="bg-white w-4.5 rounded-2xl"></span>
                                 </button>
                             </div>
-                            <div className="flex justify-between mb-3 items-center">
+                            <div className="flex justify-between mb-auto items-center">
                                 <p className="text-xs text-info">Bordlampe 1</p>
                                 <button className="w-10.5 h-6 rounded-xl bg-main flex p-0.75 justify-end">
                                     <span className="bg-white w-4.5 rounded-2xl"></span>
@@ -98,108 +99,114 @@ export default function Home(){
                                 </button>
                             </div>
                         </li>
-                        <li className="bg-white rounded-xl p-3 shadow-md">
+                        <li className="bg-white rounded-xl p-3 shadow-md snap-center snap-always">
                             <h3 className="text-sm text-font mb-3">Varme i Stuen</h3>
-                            <div className="flex justify-between mb-3 items-center">
+                            <div className="flex justify-between mb-2 items-center">
                                 <p className="text-xs text-info">Fan Coil</p>
                                 <button className="w-10.5 h-6 rounded-xl bg-main flex p-0.75 justify-end">
                                     <span className="bg-white w-4.5 rounded-2xl"></span>
                                 </button>
                             </div>
-                            <div>
-                                <img src="" alt="" />
-                                <div>
-                                    <p></p>
-                                    <p></p>
+                            <div className="flex flex-col">
+                                <div className="flex gap-7 mb-3">
+                                    <img className="py-2 pl-1" src="/icon_temp.png" alt="temp icon" />
+                                    <div className="flex flex-col justify-center">
+                                        <p className="text-lg text-font h-5.5">22°C</p>
+                                        <p className="text-xs text-info mb-1">Manuel - mode</p>
+                                    </div>
                                 </div>
-                                <button>
-                                    <img src="" alt="" />
-                                    <span>Indstillinger</span>
+                                <Link to={"/temperature"} className="bg-main flex p-1.5 rounded-lg items-center">
+                                    <img src="/icon_temp-setting.png" alt="temp setting icon" />
+                                    <span className="text-white text-xs w-full text-center pr-6">Indstillinger</span>
+                                </Link>
+                            </div>
+                        </li>
+                        <li className="bg-white rounded-xl p-3 shadow-md snap-center snap-always flex flex-col">
+                            <h3 className="text-sm text-font mb-3">Lys i Køkken</h3>
+                            <div className="flex justify-between mb-3 items-center">
+                                <p className="text-xs text-info">Køkkenbord</p>
+                                <button className="w-10.5 h-6 rounded-xl bg-main flex p-0.75 justify-end">
+                                    <span className="bg-white w-4.5 rounded-2xl"></span>
+                                </button>
+                            </div>
+                            <div className="flex justify-between mb-3 items-center">
+                                <p className="text-xs text-info">Loftlampe</p>
+                                <button className="w-10.5 h-6 rounded-xl bg-main flex p-0.75 justify-end">
+                                    <span className="bg-white w-4.5 rounded-2xl"></span>
+                                </button>
+                            </div>
+                            <h3 className="text-sm text-font mb-auto">Varme i Køkken</h3>
+                            <div className="flex justify-between items-center">
+                                <p className="text-xs text-info">Fan Coil</p>
+                                <button className="w-10.5 h-6 rounded-xl bg-main flex p-0.75 justify-end">
+                                    <span className="bg-white w-4.5 rounded-2xl"></span>
                                 </button>
                             </div>
                         </li>
-                        <li className="bg-white rounded-xl p-3 shadow-md">
-                            <h3>Lys i Køkken</h3>
-                            <div>
-                                <p>Køkkenbord</p>
-                                <button>
-                                    <span></span>
+                        <li className="bg-white rounded-xl p-3 shadow-md snap-center snap-always">
+                            <h3 className="text-sm text-font mb-3">Varme i Soveværelse</h3>
+                            <div className="flex justify-between mb-2 items-center">
+                                <p className="text-xs text-info">Radiator</p>
+                                <button className="w-10.5 h-6 rounded-xl bg-mist-300 flex p-0.75 justify-start">
+                                    <span className="bg-white w-4.5 rounded-2xl"></span>
                                 </button>
                             </div>
                             <div>
-                                <p>Loftlampe</p>
-                                <button>
-                                    <span></span>
-                                </button>
-                            </div>
-                            <h3>Varme i Køkken</h3>
-                            <div>
-                                <p>Fan Coil</p>
-                                <button>
-                                    <span></span>
-                                </button>
-                            </div>
-                        </li>
-                        <li className="bg-white rounded-xl p-3 shadow-md">
-                            <h3>Varme i Soveværelse</h3>
-                            <div>
-                                <p>Radiator</p>
-                                <button>
-                                    <span></span>
-                                </button>
-                            </div>
-                            <div>
-                                <img src="" alt="" />
-                                <div>
-                                    <p></p>
-                                    <p></p>
+                                <div className="flex gap-7 mb-3">
+                                    <img className="py-2 pl-1" src="/icon_temp.png" alt="temp icon" />
+                                    <div className="flex flex-col justify-center">
+                                        <p className="text-lg text-font h-5.5">17°C</p>
+                                        <p className="text-xs text-info mb-1">Tidsplan - mode</p>
+                                    </div>
                                 </div>
-                                <button>
-                                    <img src="" alt="" />
-                                    <span>Indstillinger</span>
+                                <Link to={"/temperature"} className="bg-main flex p-1.5 rounded-lg items-center">
+                                    <img src="/icon_temp-setting.png" alt="temp setting icon" />
+                                    <span className="text-white text-xs w-full text-center pr-6">Indstillinger</span>
+                                </Link>
+                            </div>
+                        </li>
+                        <li className="bg-white rounded-xl p-3 shadow-md snap-center snap-always flex flex-col">
+                            <h3 className="text-sm text-font mb-3">Lys i Indkørsel</h3>
+                            <div className="flex justify-between mb-3 items-center">
+                                <p className="text-xs text-info">Væglamper</p>
+                                <button className="w-10.5 h-6 rounded-xl bg-main flex p-0.75 justify-end">
+                                    <span className="bg-white w-4.5 rounded-2xl"></span>
+                                </button>
+                            </div>
+                            <div className="flex justify-between mb-3 items-center">
+                                <p className="text-xs text-info">Bedlamper</p>
+                                <button className="w-10.5 h-6 rounded-xl bg-main flex p-0.75 justify-end">
+                                    <span className="bg-white w-4.5 rounded-2xl"></span>
+                                </button>
+                            </div>
+                            <h3 className="text-sm text-font mb-auto">Lys i Garage</h3>
+                            <div className="flex justify-between items-center">
+                                <p className="text-xs text-info">Alt lys</p>
+                                <button className="w-10.5 h-6 rounded-xl bg-main flex p-0.75 justify-end">
+                                    <span className="bg-white w-4.5 rounded-2xl"></span>
                                 </button>
                             </div>
                         </li>
-                        <li className="bg-white rounded-xl p-3 shadow-md">
-                            <h3>Lys i Indkørsel</h3>
-                            <div>
-                                <p>Væglamper</p>
-                                <button>
-                                    <span></span>
+                        <li className="bg-white rounded-xl p-3 shadow-md snap-center snap-always">
+                            <h3 className="text-sm text-font mb-3">Varme i Badeværelse</h3>
+                            <div className="flex justify-between mb-2 items-center">
+                                <p className="text-xs text-info">Gulvvarme</p>
+                                <button className="w-10.5 h-6 rounded-xl bg-mist-300 flex p-0.75 justify-start">
+                                    <span className="bg-white w-4.5 rounded-2xl"></span>
                                 </button>
                             </div>
                             <div>
-                                <p>Bedlamper</p>
-                                <button>
-                                    <span></span>
-                                </button>
-                            </div>
-                            <h3>Lys i Garage</h3>
-                            <div>
-                                <p>Alt lys</p>
-                                <button>
-                                    <span></span>
-                                </button>
-                            </div>
-                        </li>
-                        <li className="bg-white rounded-xl p-3 shadow-md">
-                            <h3>Varme i Badeværelse</h3>
-                            <div>
-                                <p>Gulvvarme</p>
-                                <button>
-                                    <span></span>
-                                </button>
-                            </div>
-                            <div>
-                                <img src="" alt="" />
-                                <div>
-                                    <p></p>
-                                    <p></p>
+                                <div className="flex gap-7 mb-3">
+                                    <img className="py-2 pl-1" src="/icon_temp.png" alt="temp icon" />
+                                    <div className="flex flex-col justify-center">
+                                        <p className="text-lg text-font h-5.5">21°C</p>
+                                        <p className="text-xs text-info mb-1">Tidsplan - mode</p>
+                                    </div>
                                 </div>
-                                <button>
-                                    <img src="" alt="" />
-                                    <span>Indstillinger</span>
-                                </button>
+                                <Link to={"/temperature"} className="bg-main flex p-1.5 rounded-lg items-center">
+                                    <img src="/icon_temp-setting.png" alt="temp setting icon" />
+                                    <span className="text-white text-xs w-full text-center pr-6">Indstillinger</span>
+                                </Link>
                             </div>
                         </li>
                     </ul>
