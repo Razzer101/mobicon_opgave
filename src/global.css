@@ -13,6 +13,7 @@ body{
   --color-font: #1E1F25;
   --color-info: #878A96;
   --color-highlight: #35CF94;
+  --color-chart: #f6f6f6;
 }
 
 @layer utilities {
