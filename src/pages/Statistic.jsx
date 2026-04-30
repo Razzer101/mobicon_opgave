@@ -27,7 +27,7 @@ export default function Statistic(){
                         <stop offset="100%" stopColor="#0f407b" stopOpacity={0} />
                     </linearGradient>
                 </defs>
-                <rect x={cx -19} y={cy} width={38} height={120} fill="url(#barGradient)"/>
+                <rect x={cx -19} y={cy -5} width={38} height={120} fill="url(#barGradient)"/>
                 <circle cx={cx} cy={cy} r={6.5} fill="#fff" stroke="#0f407b" strokeWidth={3} />
             </g>
         );
@@ -76,7 +76,7 @@ export default function Statistic(){
                             <FiChevronDown className="text-info"/>
                         </button>
                     </div>
-                    <LineChart className='bg-chart pt-14 px-4 rounded-lg shadow-md aspect-[1/0.65]' responsive data={data}>
+                    <LineChart className='bg-chart pt-10 px-4 rounded-lg shadow-md aspect-[1/0.65]' responsive data={data}>
                         <Line dataKey="average" type="bump" strokeDasharray="11 11" dot={false} stroke='#bbb' strokeWidth={3}/>
                         <Line dataKey="today" type="bump" strokeWidth={3} stroke='#0f407b' dot={customDot} activeDot={false}/>
                         <XAxis dataKey="day" interval="preserveStartEnd" tick={customTick} tickLine={false} axisLine={false} className='text-info'/>
