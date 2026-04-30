@@ -1,8 +1,24 @@
 import { Link } from "react-router";
 import Nav from "../components/Nav";
 import { FiChevronLeft, FiMoreVertical } from "react-icons/fi";
+import { CircularInput, CircularThumb, CircularTrack } from "react-circular-input";
+import { useState } from "react";
 
 export default function Temp(){
+    const [value, setValue] = useState(0)
+
+    const min = 0
+    const max = 0.61
+    const step = 0.05
+
+    const normalizeValue = (v) => {
+        // snap to step relative to min
+        const stepped = Math.round((v - min) / step) * step + min
+
+        // clamp to bounds
+        return Math.min(Math.max(stepped, min), max)
+    }
+
     return(
         <>
             <header className="py-6 px-4 flex justify-between">
@@ -14,11 +30,16 @@ export default function Temp(){
                 <section className="flex flex-col mb-8 px-3">
                     <h2 className="pl-2 mb-2 text-font">Stue</h2>
                     <div className="flex flex-col px-4 pt-5 pb-2.5 bg-white shadow-md rounded-xl">
-                        <div className="px-10 mb-2">
-                            <div className="rounded-full inset-shadow-md h-65 flex justify-center items-center">
+                        <div className="px-10 mb-2 flex justify-center">
+                            <div className="rounded-full inset-shadow-md h-65 w-65 flex justify-center items-center">
                                 <div className="h-[65%] w-[65%] rounded-full shadow-custom flex flex-col gap-2.5 justify-center items-center">
                                     <p className="text-5xl text-font">11°C</p>
                                     <p className="text-info">Termostat</p>
+                                    <div className="h-0">
+                                        <CircularInput value={normalizeValue(value)} onChange={(v) => setValue(normalizeValue(v))} radius={120.5} onChange={setValue} className="relative bottom-41.5 rotate-[-110deg]">
+                                            <CircularThumb/>
+                                        </CircularInput>
+                                    </div>
                                 </div>
                             </div>
                         </div>
